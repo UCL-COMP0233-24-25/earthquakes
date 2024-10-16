@@ -27,7 +27,8 @@ def get_data():
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
-    ...
+    with open("response.json", "w") as f:
+        f.write(text)
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
