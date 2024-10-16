@@ -3,7 +3,7 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
-
+import json
 
 def get_data():
     # With requests, we can ask the web service for the data.
@@ -27,31 +27,38 @@ def get_data():
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
-    ...
+    with open("response.json", "w") as f:
+        f.write(text)
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return ...
+    return json.loads(text)
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
-
+    return data["metadata"]["count"]
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    return earthquake['properties']["mag"]
 
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
     # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    return earthquake['properties']["place"]
 
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
+    strongest_earthquake = data["features"][0]
+    for earthquake in data["features"]:
+        mag = get_magnitude(earthquake)
+        if mag > get_magnitude(strongest_earthquake):
+            strongest_earthquake = earthquake
+    return get_magnitude(strongest_earthquake), get_location(strongest_earthquake)
+
+
 
 
 # With all the above functions defined, we can now call them and get the result
