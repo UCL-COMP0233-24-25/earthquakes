@@ -3,6 +3,7 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
+import json
 
 
 def get_data():
@@ -23,7 +24,7 @@ def get_data():
 
     # The response we get back is an object with several fields.
     # The actual contents we care about are in its text field:
-    text = response.text
+    text = response.json()
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
@@ -31,28 +32,34 @@ def get_data():
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return ...
+    with open("response.json", "w") as f:
+        json.dump(text, f, indent=4)
+        
+    return text
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
+    return len(data['features'])
 
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    return earthquake["properties"]["mag"]
 
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
     # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    return earthquake["geometry"]["coordinates"][:2]
 
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
     ...
-
+    max_magnitude = max(get_magnitude(earthquake) for earthquake in data["features"])
+    location = [get_location(earthquake) for earthquake in data["features"] if get_magnitude(earthquake) == max_magnitude]
+        
+    return (max_magnitude, location)
 
 # With all the above functions defined, we can now call them and get the result
 data = get_data()
