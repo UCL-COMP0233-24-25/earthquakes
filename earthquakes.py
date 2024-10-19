@@ -54,7 +54,7 @@ def get_magnitude(earthquake):
 def get_location(earthquake):
     x = earthquake["geometry"]["coordinates"]
     y = x[:2]
-    # There are three coordinates, but we don't care about the third (altitude)
+    # There are 3 coordinates, but we don't care about the third (altitude)
     return y
 
 
