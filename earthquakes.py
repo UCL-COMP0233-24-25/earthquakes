@@ -3,11 +3,10 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
-
+import json
 
 def get_data():
-    # With requests, we can ask the web service for the data.
-    # Can you understand the parameters we are passing here?
+    # Send request to the earthquake data API
     response = requests.get(
         "http://earthquake.usgs.gov/fdsnws/event/1/query.geojson",
         params={
@@ -18,40 +17,62 @@ def get_data():
             "minlongitude": "-9.756",
             "minmagnitude": "1",
             "endtime": "2018-10-11",
-            "orderby": "time-asc"}
+            "orderby": "time-asc"
+        }
     )
 
-    # The response we get back is an object with several fields.
-    # The actual contents we care about are in its text field:
-    text = response.text
-    # To understand the structure of this text, you may want to save it
-    # to a file and open it in VS Code or a browser.
-    # See the README file for more information.
-    ...
+    # Parse the JSON response
+    data = response.json()
 
-    # We need to interpret the text to get values that we can work with.
-    # What format is the text in? How can we load the values?
-    return ...
+    # Save the parsed data to a JSON file
+    with open("earthquake_data.json", "w") as f:
+        json.dump(data, f, indent=4)  # Pretty print with indent
+
+    print("Data saved to earthquake_data.json")
+    return data
+
+# Call the function to fetch and save data
+
+
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
+    return len(data['features'])
 
 
 def get_magnitude(earthquake):
-    """Retrive the magnitude of an earthquake item."""
-    return ...
-
+    """Retrieve the magnitude of an earthquake item."""
+    return earthquake['properties']['mag']
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
-    # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    # The first two coordinates are longitude and latitude respectively
+    coordinates = earthquake['geometry']['coordinates']
+    latitude = coordinates[1]
+    longitude = coordinates[0]
+    return latitude, longitude
 
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
+    max_magnitude = -10.0  # Initialize with a very small value
+    max_earthquake = None  # To store the earthquake with the highest magnitude
+
+    # Iterate through each earthquake in the dataset
+    for earthquake in data['features']:
+        magnitude = get_magnitude(earthquake)  # Retrieve the magnitude
+
+        # Check if this earthquake has a higher magnitude than the current maximum
+        if magnitude > max_magnitude:
+            max_magnitude = magnitude
+            max_earthquake = earthquake
+
+    # If an earthquake was found, return its magnitude and location
+    if max_earthquake:
+        max_location = get_location(max_earthquake)  # Get the location of the strongest earthquake
+        return max_magnitude, max_location
+    else:
+        return None  # In case there are no earthquakes in the data
 
 
 # With all the above functions defined, we can now call them and get the result
