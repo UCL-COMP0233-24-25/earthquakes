@@ -63,11 +63,8 @@ def get_maximum(data):
     for earthquake in data["features"]:
         locations.append(get_location(earthquake))
         magnitudes.append(get_magnitude(earthquake))
-        # loc_mag_dict[get_location(earthquake)]=get_magnitude(earthquake)
-    loc_mag_dict = dict(zip(locations, magnitudes))
 
-    max_loc = max(loc_mag_dict, key = loc_mag_dict.get)
-    return loc_mag_dict[max_loc], max_loc
+    return max(magnitudes), locations[magnitudes.index(max(magnitudes))]
 
 # With all the above functions defined, we can now call them and get the result
 data = get_data()
