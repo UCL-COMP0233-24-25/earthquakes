@@ -27,31 +27,59 @@ def get_data():
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
-    ...
+    import json
+    json_str=json.dumps(text, indent=4, sort_keys=True)
+    with open('jsonfile.json','w') as f:
+        f.write(json_str)
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return ...
+    with open('jsonfile.json','r') as f:
+        loaded_json_str=f.read()
+    load=json.loads(loaded_json_str)
+    # print(type(load))
+    dictload=json.loads(load)
+    # print(type(dictload))
+    features=dictload['features']
+    # print(features)
+    return features
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
+    return len(data)
 
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    prop=earthquake['properties']
+    mag=prop['mag']
+    return mag
 
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
     # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    geo=earthquake['geometry']
+    coordinate=geo['coordinates']
+    location = coordinate[:1]
+    return location
 
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
+    lev=0
+    id= 0
+    for i in range(len(data)):
+        eq=data[i]
+        prop=eq['properties']
+        level=prop['mag']
+        if level >= lev:
+            id = i
+            lev = level
+    earthquake=data[id]
+    magnitude =get_magnitude(earthquake)
+    location = get_location(earthquake)
+    return magnitude, location
 
 
 # With all the above functions defined, we can now call them and get the result
