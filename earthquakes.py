@@ -61,7 +61,7 @@ def get_location(earthquake):
     # There are three coordinates, but we don't care about the third (altitude)
     geo=earthquake['geometry']
     coordinate=geo['coordinates']
-    location = coordinate[:1]
+    location = [coordinate[0], coordinate[1]]
     return location
 
 
