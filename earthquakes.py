@@ -58,9 +58,13 @@ def get_location(earthquake):
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    loc_mag_dict = {}
+    locations = []
+    magnitudes = []
     for earthquake in data["features"]:
-        loc_mag_dict[get_location(earthquake)]=get_magnitude(earthquake)
+        locations.append(get_location(earthquake))
+        magnitudes.append(get_magnitude(earthquake))
+        # loc_mag_dict[get_location(earthquake)]=get_magnitude(earthquake)
+    loc_mag_dict = dict(zip(locations, magnitudes))
 
     max_loc = max(loc_mag_dict, key = loc_mag_dict.get)
     return loc_mag_dict[max_loc], max_loc
