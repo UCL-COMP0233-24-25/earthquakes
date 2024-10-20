@@ -3,6 +3,7 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
+import json
 
 
 def get_data():
@@ -26,36 +27,50 @@ def get_data():
     text = response.text
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
-    # See the README file for more information.
-    ...
+    # See the README file for more information. 
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return ...
+    return json.loads(text)
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
+    return len(data['features'])
 
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    return earthquake['properties']['mag']
 
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
     # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    return earthquake['geometry']['coordinates']
 
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
+    earthquakes = data['features']
 
+    if not earthquakes:
+        return None  # Return None if the list is empty
+    
+    # Use max() to find the earthquake with the largest magnitude
+    max_earthquake = max(earthquakes, key=get_magnitude)
+    
+    return get_magnitude(max_earthquake), get_location(max_earthquake)
+
+def save_json(data, file_name):
+    with open(file_name, 'w') as f:
+        json.dump(data, f)
 
 # With all the above functions defined, we can now call them and get the result
 data = get_data()
 print(f"Loaded {count_earthquakes(data)}")
+
+# temp code
+# save_json(data, 'earthquakes.json')
+
 max_magnitude, max_location = get_maximum(data)
 print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
