@@ -41,7 +41,7 @@ def count_earthquakes(data: dict):
 
 def get_magnitude(earthquake: dict):
     """Retrive the magnitude of an earthquake item."""
-    return int(earthquake["properties"]["mag"])
+    return float(earthquake["properties"]["mag"])
 
 
 def get_location(earthquake: dict):
