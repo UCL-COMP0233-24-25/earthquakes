@@ -32,12 +32,14 @@ def get_data():
         f.write(earthquake_text)
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return
 
-with open('earthquake.json', 'r') as f:
+    with open('earthquake.json', 'r') as f:
      earthquake_info = f.read()
 
-data = json.loads(earthquake_info) # used json to convert data into a dictionary then my functions are easy to work with 
+    data = json.loads(earthquake_info) # used json to convert data into a dictionary then my functions are easy to work with 
+
+    return data
+
 
 
 def count_earthquakes(data):
@@ -69,8 +71,9 @@ def get_maximum(data):
 
     ...
 
-
 # With all the above functions defined, we can now call them and get the result
+
+data=get_data()
 
 print(f"Loaded {count_earthquakes(data)}")
 max_magnitude, max_location = get_maximum(data)
