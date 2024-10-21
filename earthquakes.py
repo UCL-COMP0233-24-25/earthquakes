@@ -69,11 +69,10 @@ def get_maximum(data):
             max_locations.append(get_location(earthquake))
     return max_magnitude, max_locations
 
-def freq_per_yr_plot():
+def freq_per_yr_plot(plot=False):
 
     years_sec = [earthquake['properties']['time'] for earthquake in data['features']] 
     years = [datetime.datetime.fromtimestamp(year/1000).year for year in years_sec]
-    print(years)
 
     year_counts = {}
     for year in years:
@@ -81,13 +80,37 @@ def freq_per_yr_plot():
             year_counts[year] += 1
         else:
             year_counts[year] = 1
+    if plot:
+        plt.bar(year_counts.keys(), year_counts.values())
+        plt.xticks(np.arange(2000, 2019, 1))
+        plt.xlabel("Year")
+        plt.ylabel("Number of Earthquakes")
+        plt.title("Number of Earthquakes per Year")
+        plt.show()
+    return year_counts
 
-    plt.bar(year_counts.keys(), year_counts.values())
-    plt.xticks(np.arange(2000, 2019, 1))
-    plt.xlabel("Year")
-    plt.ylabel("Number of Earthquakes")
-    plt.title("Number of Earthquakes per Year")
-    plt.show()
+def avg_mag_per_year(data, plot=False):
+    cum_mag_per_year = {}
+    quakes = [quake for quake in data['features']]
+    for quake in quakes:
+        quake_year = datetime.datetime.fromtimestamp(quake['properties']['time']/1000).year 
+        quake_mag = quake['properties']['mag']
+        if quake_year not in cum_mag_per_year.keys():
+            cum_mag_per_year[quake_year] = quake_mag
+        else:
+            cum_mag_per_year[quake_year] += quake_mag
+    year_counts = freq_per_yr_plot()
+    for year in cum_mag_per_year:
+        cum_mag_per_year[year] = cum_mag_per_year[year]/year_counts[year]
+    if plot:
+        plt.bar(year_counts.keys(), year_counts.values())
+        plt.xticks(np.arange(2000, 2019, 1))
+        plt.xlabel("Year")
+        plt.ylabel("Average Magnitude")
+        plt.title("Average Magnitude of Earthquakes per Year")
+        plt.show()
+    return cum_mag_per_year
+
 
 # With all the above functions defined, we can now call them and get the result
 data = get_data()
@@ -95,5 +118,5 @@ print(f"Loaded {count_earthquakes(data)}")
 max_magnitude, max_location = get_maximum(data)
 print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
 
-    
-freq_per_yr_plot()   
+  
+avg_mag_per_year(data, plot=True)
