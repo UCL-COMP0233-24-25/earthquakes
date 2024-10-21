@@ -141,7 +141,7 @@ def plot_average_magnitude_per_year(data):
 
     # Create the plot
     plt.figure(figsize=(10, 6))
-    plt.plot(list(data.keys()), mean_mags, marker='o', color='b')
+    plt.scatter(list(data.keys()), mean_mags, marker='o', color='b')
 
     # Add labels and title
     plt.xlabel('Year')
@@ -159,7 +159,7 @@ def plot_number_per_year(data):
 
     # Create the plot
     plt.figure(figsize=(10, 6))
-    plt.plot(list(data.keys()), frequencies, marker='o', color='b')
+    plt.scatter(list(data.keys()), frequencies, marker='o', color='b')
 
     # Add labels and title
     plt.xlabel('Year')
