@@ -115,10 +115,11 @@ if __name__ == "__main__":
         # Step 3: Count the number of earthquakes
         total_earthquakes = count_earthquakes(earthquake_data)
         print("\nTotal number of earthquakes:", total_earthquakes)
+        # Step 4: Save the data as a json file
+        ###save_to_json('earthquakes_data.json', earthquake_data)
 
-        # Step 4: Find the strongest earthquake
+        # Step 5: Find the strongest earthquake
         strongest_earthquake, max_magnitude = get_maximum(earthquake_data)
-        save_to_json('earthquakes_data.json', earthquake_data)
         if strongest_earthquake:
             place, lat, lon, depth = get_location(strongest_earthquake)
             print(f"\nStrongest earthquake:")
