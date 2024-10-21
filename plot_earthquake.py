@@ -22,6 +22,7 @@ def get_year(earthquake):
     # Fortunately, Python provides a way of interpreting this timestamp:
     # (Question for discussion: Why do we divide by 1000?)
     year = date.fromtimestamp(timestamp/1000).year
+    # print(year)
     return year
 
 
@@ -55,9 +56,12 @@ def plot_average_magnitude_per_year(yearquakes,year):
         mag=yearmag[year[i]]
         avg_mag=sum(mag)/len(mag)
         avg.append(avg_mag)
+    plt.figure(figsize=(10,5))
     plt.plot(year,avg)
     plt.xlabel("Years")
     plt.ylabel("avg_mag")
+    plt.grid()
+    plt.xticks(year)
     plt.show()
 
     ...
@@ -71,6 +75,7 @@ def plot_number_per_year(earthquakes):
             continue
         else:
             year.append(get_year(quake))
+    print(year)
     yearquakes=[]
     yearnum=[]
     for i in range(len(year)):
@@ -81,9 +86,13 @@ def plot_number_per_year(earthquakes):
                 temp.append(quake)
         yearquakes.append(temp)
         yearnum.append(len(temp))
+
+    plt.figure(figsize=(10,5))
     plt.plot(year,yearnum)
     plt.xlabel("Years")
     plt.ylabel("number of earthquakes")
+    plt.grid()
+    plt.xticks(year)
     plt.show()
     return yearquakes,year
     ...
