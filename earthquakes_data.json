@@ -1,7 +1,7 @@
 {
     "type": "FeatureCollection",
     "metadata": {
-        "generated": 1729498463000,
+        "generated": 1729504751000,
         "url": "https://earthquake.usgs.gov/fdsnws/event/1/query.geojson?starttime=2000-01-01&maxlatitude=58.723&minlatitude=50.008&maxlongitude=1.67&minlongitude=-9.756&minmagnitude=1&endtime=2018-10-11&orderby=time-asc",
         "title": "USGS Earthquakes",
         "status": 200,
@@ -37,7 +37,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 12 km NNW of Penrith, United Kingdom"
+                "title": "M 2.6 - 12 km NNW of Penrith, United Kingdom",
+                "year": 2000
             },
             "geometry": {
                 "type": "Point",
@@ -77,7 +78,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 4.0 - 1 km WSW of Warwick, United Kingdom"
+                "title": "M 4.0 - 1 km WSW of Warwick, United Kingdom",
+                "year": 2000
             },
             "geometry": {
                 "type": "Point",
@@ -117,7 +119,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 4.0 - 38 km NNE of Cromer, United Kingdom"
+                "title": "M 4.0 - 38 km NNE of Cromer, United Kingdom",
+                "year": 2000
             },
             "geometry": {
                 "type": "Point",
@@ -157,7 +160,8 @@
                 "gap": null,
                 "magType": "mb",
                 "type": "earthquake",
-                "title": "M 3.3 - 171 km ENE of Peterhead, United Kingdom"
+                "title": "M 3.3 - 171 km ENE of Peterhead, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -197,7 +201,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 8 km W of Marlborough, United Kingdom"
+                "title": "M 2.9 - 8 km W of Marlborough, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -237,7 +242,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 3 km W of Locharbriggs, United Kingdom"
+                "title": "M 2.9 - 3 km W of Locharbriggs, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -277,7 +283,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 4.0 - 20 km NNW of Flexbury, United Kingdom"
+                "title": "M 4.0 - 20 km NNW of Flexbury, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -317,7 +324,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 3 km SSW of Clacton-on-Sea, United Kingdom"
+                "title": "M 2.6 - 3 km SSW of Clacton-on-Sea, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -357,7 +365,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 3 km NNW of Sturry, United Kingdom"
+                "title": "M 2.6 - 3 km NNW of Sturry, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -397,7 +406,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 2 km SSE of Caerphilly, United Kingdom"
+                "title": "M 3.5 - 2 km SSE of Caerphilly, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -437,7 +447,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 1 km SE of Deri, United Kingdom"
+                "title": "M 2.5 - 1 km SE of Deri, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -477,7 +488,8 @@
                 "gap": null,
                 "magType": "mb",
                 "type": "earthquake",
-                "title": "M 4.2 - 5 km E of Long Clawson, United Kingdom"
+                "title": "M 4.2 - 5 km E of Long Clawson, United Kingdom",
+                "year": 2001
             },
             "geometry": {
                 "type": "Point",
@@ -517,7 +529,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.0 - 1 km S of Abercarn, United Kingdom"
+                "title": "M 3.0 - 1 km S of Abercarn, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -557,7 +570,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.4 - 25 km NNE of Sheringham, United Kingdom"
+                "title": "M 3.4 - 25 km NNE of Sheringham, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -597,7 +611,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 1 km SSE of Deri, United Kingdom"
+                "title": "M 3.5 - 1 km SSE of Deri, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -637,7 +652,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.4 - 3 km N of Marshfield, United Kingdom"
+                "title": "M 3.4 - 3 km N of Marshfield, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -677,7 +693,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.0 - 40 km NNW of \u00c9tretat, France"
+                "title": "M 3.0 - 40 km NNW of \u00c9tretat, France",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -717,7 +734,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.3 - 16 km N of Isle Of Mull, United Kingdom"
+                "title": "M 2.3 - 16 km N of Isle Of Mull, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -757,7 +775,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.1 - 4 km SSE of Glyn-neath, United Kingdom"
+                "title": "M 2.1 - 4 km SSE of Glyn-neath, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -797,7 +816,8 @@
                 "gap": null,
                 "magType": "mb",
                 "type": "earthquake",
-                "title": "M 4.8 - 2 km ESE of Wombourn, United Kingdom"
+                "title": "M 4.8 - 2 km ESE of Wombourn, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -837,7 +857,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.2 - 3 km ESE of Wombourn, United Kingdom"
+                "title": "M 3.2 - 3 km ESE of Wombourn, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -877,7 +898,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.2 - 3 km NE of Kingswinford, United Kingdom"
+                "title": "M 1.2 - 3 km NE of Kingswinford, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -917,7 +939,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.7 - 0 km N of Longdendale, United Kingdom"
+                "title": "M 3.7 - 0 km N of Longdendale, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -957,7 +980,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 4.3 - 1 km ESE of Manchester, United Kingdom"
+                "title": "M 4.3 - 1 km ESE of Manchester, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -997,7 +1021,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 1 km WNW of Longsight, United Kingdom"
+                "title": "M 2.9 - 1 km WNW of Longsight, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1037,7 +1062,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 0 km S of Droylsden, United Kingdom"
+                "title": "M 3.5 - 0 km S of Droylsden, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1077,7 +1103,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.3 - 0 km WSW of Droylsden, United Kingdom"
+                "title": "M 3.3 - 0 km WSW of Droylsden, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1117,7 +1144,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.8 - 2 km WNW of Droylsden, United Kingdom"
+                "title": "M 3.8 - 2 km WNW of Droylsden, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1157,7 +1185,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.8 - 2 km N of Longsight, United Kingdom"
+                "title": "M 2.8 - 2 km N of Longsight, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1197,7 +1226,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 2 km E of Manchester, United Kingdom"
+                "title": "M 2.5 - 2 km E of Manchester, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1237,7 +1267,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 1 km ENE of Manchester, United Kingdom"
+                "title": "M 2.5 - 1 km ENE of Manchester, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1277,7 +1308,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 2 km NNE of Longsight, United Kingdom"
+                "title": "M 2.6 - 2 km NNE of Longsight, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1317,7 +1349,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.1 - 2 km N of Longsight, United Kingdom"
+                "title": "M 3.1 - 2 km N of Longsight, United Kingdom",
+                "year": 2002
             },
             "geometry": {
                 "type": "Point",
@@ -1357,7 +1390,8 @@
                 "gap": 242.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.3 - 17 km NW of Sangatte, France"
+                "title": "M 2.3 - 17 km NW of Sangatte, France",
+                "year": 2003
             },
             "geometry": {
                 "type": "Point",
@@ -1397,7 +1431,8 @@
                 "gap": 287.5,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.0 - 12 km NNW of Balfron, United Kingdom"
+                "title": "M 3.0 - 12 km NNW of Balfron, United Kingdom",
+                "year": 2003
             },
             "geometry": {
                 "type": "Point",
@@ -1437,7 +1472,8 @@
                 "gap": 287.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.8 - 14 km NNW of Balfron, United Kingdom"
+                "title": "M 2.8 - 14 km NNW of Balfron, United Kingdom",
+                "year": 2003
             },
             "geometry": {
                 "type": "Point",
@@ -1477,7 +1513,8 @@
                 "gap": 287.3,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 12 km NNW of Balfron, United Kingdom"
+                "title": "M 2.5 - 12 km NNW of Balfron, United Kingdom",
+                "year": 2003
             },
             "geometry": {
                 "type": "Point",
@@ -1517,7 +1554,8 @@
                 "gap": 164.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.2 - 1 km WSW of Finningley, United Kingdom"
+                "title": "M 3.2 - 1 km WSW of Finningley, United Kingdom",
+                "year": 2003
             },
             "geometry": {
                 "type": "Point",
@@ -1557,7 +1595,8 @@
                 "gap": 132.6,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.3 - 2 km E of North Petherton, United Kingdom"
+                "title": "M 3.3 - 2 km E of North Petherton, United Kingdom",
+                "year": 2004
             },
             "geometry": {
                 "type": "Point",
@@ -1597,7 +1636,8 @@
                 "gap": 128.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.6 - 2 km E of North Petherton, United Kingdom"
+                "title": "M 3.6 - 2 km E of North Petherton, United Kingdom",
+                "year": 2004
             },
             "geometry": {
                 "type": "Point",
@@ -1637,7 +1677,8 @@
                 "gap": 128.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.7 - 2 km E of North Petherton, United Kingdom"
+                "title": "M 3.7 - 2 km E of North Petherton, United Kingdom",
+                "year": 2004
             },
             "geometry": {
                 "type": "Point",
@@ -1677,7 +1718,8 @@
                 "gap": 96,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.4 - 0 km SW of Diggle, United Kingdom"
+                "title": "M 3.4 - 0 km SW of Diggle, United Kingdom",
+                "year": 2004
             },
             "geometry": {
                 "type": "Point",
@@ -1717,7 +1759,8 @@
                 "gap": 170.8,
                 "magType": "md",
                 "type": "earthquake",
-                "title": "M 2.7 - 167 km ENE of Peterhead, United Kingdom"
+                "title": "M 2.7 - 167 km ENE of Peterhead, United Kingdom",
+                "year": 2004
             },
             "geometry": {
                 "type": "Point",
@@ -1757,7 +1800,8 @@
                 "gap": 183.2,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.0 - 5 km WNW of Lund, United Kingdom"
+                "title": "M 3.0 - 5 km WNW of Lund, United Kingdom",
+                "year": 2004
             },
             "geometry": {
                 "type": "Point",
@@ -1797,7 +1841,8 @@
                 "gap": 94.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.8 - 2 km SW of Conwy, United Kingdom"
+                "title": "M 3.8 - 2 km SW of Conwy, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -1837,7 +1882,8 @@
                 "gap": 146.5,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 2 km WSW of Leek, United Kingdom"
+                "title": "M 2.6 - 2 km WSW of Leek, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -1877,7 +1923,8 @@
                 "gap": 247.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 3 km WSW of Southwater, United Kingdom"
+                "title": "M 2.9 - 3 km WSW of Southwater, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -1917,7 +1964,8 @@
                 "gap": 112.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.0 - 7 km WNW of Fort William, United Kingdom"
+                "title": "M 3.0 - 7 km WNW of Fort William, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -1957,7 +2005,8 @@
                 "gap": 70.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.4 - 3 km S of Redbourn, United Kingdom"
+                "title": "M 2.4 - 3 km S of Redbourn, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -1997,7 +2046,8 @@
                 "gap": 89.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.2 - 27 km E of Wicklow, Ireland"
+                "title": "M 3.2 - 27 km E of Wicklow, Ireland",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -2037,7 +2087,8 @@
                 "gap": 136.2,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.7 - 24 km ENE of Tobermory, United Kingdom"
+                "title": "M 2.7 - 24 km ENE of Tobermory, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -2077,7 +2128,8 @@
                 "gap": 135.5,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.4 - 25 km NNE of Isle Of Mull, United Kingdom"
+                "title": "M 2.4 - 25 km NNE of Isle Of Mull, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -2117,7 +2169,8 @@
                 "gap": 124.9,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.7 - 5 km SSW of Auchterarder, United Kingdom"
+                "title": "M 1.7 - 5 km SSW of Auchterarder, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -2157,7 +2210,8 @@
                 "gap": 135.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 3 km WSW of Auchterarder, United Kingdom"
+                "title": "M 2.5 - 3 km WSW of Auchterarder, United Kingdom",
+                "year": 2005
             },
             "geometry": {
                 "type": "Point",
@@ -2197,7 +2251,8 @@
                 "gap": 117.5,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 2 km SE of Kingsclere, United Kingdom"
+                "title": "M 2.6 - 2 km SE of Kingsclere, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2237,7 +2292,8 @@
                 "gap": 117.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.9 - 17 km SSW of Fort William, United Kingdom"
+                "title": "M 1.9 - 17 km SSW of Fort William, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2277,7 +2333,8 @@
                 "gap": 74.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 35 km ENE of Portree, United Kingdom"
+                "title": "M 2.9 - 35 km ENE of Portree, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2317,7 +2374,8 @@
                 "gap": 73.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 1 km E of North Petherton, United Kingdom"
+                "title": "M 2.5 - 1 km E of North Petherton, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2357,7 +2415,8 @@
                 "gap": 72.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.7 - 4 km SSW of Dorstone, United Kingdom"
+                "title": "M 2.7 - 4 km SSW of Dorstone, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2397,7 +2456,8 @@
                 "gap": 205.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.4 - 15 km SW of Fort William, United Kingdom"
+                "title": "M 1.4 - 15 km SW of Fort William, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2437,7 +2497,8 @@
                 "gap": 93.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.7 - 4 km NNE of Tenbury Wells, United Kingdom"
+                "title": "M 2.7 - 4 km NNE of Tenbury Wells, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2477,7 +2538,8 @@
                 "gap": 200.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.8 - 1 km NNE of Polperro, United Kingdom"
+                "title": "M 2.8 - 1 km NNE of Polperro, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2517,7 +2579,8 @@
                 "gap": 50.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.6 - 2 km NW of Dumfries, United Kingdom"
+                "title": "M 3.6 - 2 km NW of Dumfries, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2557,7 +2620,8 @@
                 "gap": 195.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.6 - 58 km E of Easington, United Kingdom"
+                "title": "M 3.6 - 58 km E of Easington, United Kingdom",
+                "year": 2006
             },
             "geometry": {
                 "type": "Point",
@@ -2597,7 +2661,8 @@
                 "gap": 176,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.3 - 33 km WNW of Caol, United Kingdom"
+                "title": "M 1.3 - 33 km WNW of Caol, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2637,7 +2702,8 @@
                 "gap": 204.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.7 - 3 km SSW of Conisbrough, United Kingdom"
+                "title": "M 1.7 - 3 km SSW of Conisbrough, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2677,7 +2743,8 @@
                 "gap": 206.9,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.4 - 2 km SSW of Conisbrough, United Kingdom"
+                "title": "M 1.4 - 2 km SSW of Conisbrough, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2717,7 +2784,8 @@
                 "gap": 209,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.7 - 3 km S of Conisbrough, United Kingdom"
+                "title": "M 1.7 - 3 km S of Conisbrough, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2757,7 +2825,8 @@
                 "gap": 207.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.2 - 2 km S of Conisbrough, United Kingdom"
+                "title": "M 1.2 - 2 km S of Conisbrough, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2797,7 +2866,8 @@
                 "gap": 205.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.6 - 2 km S of Conisbrough, United Kingdom"
+                "title": "M 1.6 - 2 km S of Conisbrough, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2837,7 +2907,8 @@
                 "gap": 211.2,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.3 - 1 km ESE of Conisbrough, United Kingdom"
+                "title": "M 1.3 - 1 km ESE of Conisbrough, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2877,7 +2948,8 @@
                 "gap": 209.2,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.4 - 3 km S of Conisbrough, United Kingdom"
+                "title": "M 1.4 - 3 km S of Conisbrough, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2917,7 +2989,8 @@
                 "gap": 31.8,
                 "magType": "mb",
                 "type": "earthquake",
-                "title": "M 4.6 - 1 km WNW of Lympne, United Kingdom"
+                "title": "M 4.6 - 1 km WNW of Lympne, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2957,7 +3030,8 @@
                 "gap": 116.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 2 km ENE of Grimston, United Kingdom"
+                "title": "M 2.6 - 2 km ENE of Grimston, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -2997,7 +3071,8 @@
                 "gap": 184.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 2 km SW of Failsworth, United Kingdom"
+                "title": "M 2.5 - 2 km SW of Failsworth, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -3037,7 +3112,8 @@
                 "gap": 72.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.2 - 2 km W of Droylsden, United Kingdom"
+                "title": "M 2.2 - 2 km W of Droylsden, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -3077,7 +3153,8 @@
                 "gap": 159.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.3 - 2 km NE of Margate, United Kingdom"
+                "title": "M 2.3 - 2 km NE of Margate, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -3117,7 +3194,8 @@
                 "gap": 65.5,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.3 - 3 km SSE of Penicuik, United Kingdom"
+                "title": "M 2.3 - 3 km SSE of Penicuik, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -3157,7 +3235,8 @@
                 "gap": 77.6,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.3 - 4 km NNE of Llanrhaeadr-ym-Mochnant, United Kingdom"
+                "title": "M 3.3 - 4 km NNE of Llanrhaeadr-ym-Mochnant, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -3197,7 +3276,8 @@
                 "gap": 88.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.3 - 4 km S of Penicuik, United Kingdom"
+                "title": "M 2.3 - 4 km S of Penicuik, United Kingdom",
+                "year": 2007
             },
             "geometry": {
                 "type": "Point",
@@ -3237,7 +3317,8 @@
                 "gap": 171.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.1 - 184 km ENE of Peterhead, United Kingdom"
+                "title": "M 3.1 - 184 km ENE of Peterhead, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3277,7 +3358,8 @@
                 "gap": 19.2,
                 "magType": "mb",
                 "type": "earthquake",
-                "title": "M 4.8 - 1 km NNE of Market Rasen, United Kingdom"
+                "title": "M 4.8 - 1 km NNE of Market Rasen, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3317,7 +3399,8 @@
                 "gap": 253.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.8 - 38 km NW of St Just, United Kingdom"
+                "title": "M 2.8 - 38 km NW of St Just, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3357,7 +3440,8 @@
                 "gap": 291.3,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.1 - 3 km SSE of Middle Rasen, United Kingdom"
+                "title": "M 3.1 - 3 km SSE of Middle Rasen, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3397,7 +3481,8 @@
                 "gap": 89.4,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 12 km WNW of Penrith, United Kingdom"
+                "title": "M 2.5 - 12 km WNW of Penrith, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3437,7 +3522,8 @@
                 "gap": 127,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.5 - 1 km N of Stockton Heath, United Kingdom"
+                "title": "M 1.5 - 1 km N of Stockton Heath, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3477,7 +3563,8 @@
                 "gap": 116.1,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 27 km W of Fort William, United Kingdom"
+                "title": "M 3.5 - 27 km W of Fort William, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3517,7 +3604,8 @@
                 "gap": 53.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.9 - 2 km N of Bromyard, United Kingdom"
+                "title": "M 3.9 - 2 km N of Bromyard, United Kingdom",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3557,7 +3645,8 @@
                 "gap": 217.6,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.7 - France"
+                "title": "M 2.7 - France",
+                "year": 2008
             },
             "geometry": {
                 "type": "Point",
@@ -3597,7 +3686,8 @@
                 "gap": 93.5,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 1 km ENE of Hawkinge, United Kingdom"
+                "title": "M 3.5 - 1 km ENE of Hawkinge, United Kingdom",
+                "year": 2009
             },
             "geometry": {
                 "type": "Point",
@@ -3637,7 +3727,8 @@
                 "gap": 159.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.0 - 5 km ENE of Goxhill, United Kingdom"
+                "title": "M 3.0 - 5 km ENE of Goxhill, United Kingdom",
+                "year": 2009
             },
             "geometry": {
                 "type": "Point",
@@ -3677,7 +3768,8 @@
                 "gap": 91.2,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.7 - 3 km WSW of Flookburgh, United Kingdom"
+                "title": "M 3.7 - 3 km WSW of Flookburgh, United Kingdom",
+                "year": 2009
             },
             "geometry": {
                 "type": "Point",
@@ -3717,7 +3809,8 @@
                 "gap": 62.5,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 12 km WSW of Ambleside, United Kingdom"
+                "title": "M 3.5 - 12 km WSW of Ambleside, United Kingdom",
+                "year": 2010
             },
             "geometry": {
                 "type": "Point",
@@ -3757,7 +3850,8 @@
                 "gap": 88,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.6 - 5 km S of Masham, United Kingdom"
+                "title": "M 3.6 - 5 km S of Masham, United Kingdom",
+                "year": 2011
             },
             "geometry": {
                 "type": "Point",
@@ -3797,7 +3891,8 @@
                 "gap": 150.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 28 km NE of Tobermory, United Kingdom"
+                "title": "M 3.5 - 28 km NE of Tobermory, United Kingdom",
+                "year": 2011
             },
             "geometry": {
                 "type": "Point",
@@ -3837,7 +3932,8 @@
                 "gap": 177.9,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.7 - 4 km WSW of Bovey Tracey, United Kingdom"
+                "title": "M 2.7 - 4 km WSW of Bovey Tracey, United Kingdom",
+                "year": 2011
             },
             "geometry": {
                 "type": "Point",
@@ -3877,7 +3973,8 @@
                 "gap": 47.7,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.9 - 62 km SSE of Ventnor, United Kingdom"
+                "title": "M 3.9 - 62 km SSE of Ventnor, United Kingdom",
+                "year": 2011
             },
             "geometry": {
                 "type": "Point",
@@ -3917,7 +4014,8 @@
                 "gap": 77.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 0 km NE of Hathern, United Kingdom"
+                "title": "M 2.9 - 0 km NE of Hathern, United Kingdom",
+                "year": 2013
             },
             "geometry": {
                 "type": "Point",
@@ -3957,7 +4055,8 @@
                 "gap": 137.8,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.3 - 3 km SE of Caernarfon, United Kingdom"
+                "title": "M 2.3 - 3 km SE of Caernarfon, United Kingdom",
+                "year": 2013
             },
             "geometry": {
                 "type": "Point",
@@ -3997,7 +4096,8 @@
                 "gap": 100,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 27 km NE of Tobermory, United Kingdom"
+                "title": "M 2.9 - 27 km NE of Tobermory, United Kingdom",
+                "year": 2013
             },
             "geometry": {
                 "type": "Point",
@@ -4037,7 +4137,8 @@
                 "gap": 135.2,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.8 - 14 km WSW of Nefyn, United Kingdom"
+                "title": "M 3.8 - 14 km WSW of Nefyn, United Kingdom",
+                "year": 2013
             },
             "geometry": {
                 "type": "Point",
@@ -4077,7 +4178,8 @@
                 "gap": 100,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.8 - 14 km WSW of Nefyn, United Kingdom"
+                "title": "M 2.8 - 14 km WSW of Nefyn, United Kingdom",
+                "year": 2013
             },
             "geometry": {
                 "type": "Point",
@@ -4117,7 +4219,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.2 - 23 km W of Cleveleys, United Kingdom"
+                "title": "M 3.2 - 23 km W of Cleveleys, United Kingdom",
+                "year": 2013
             },
             "geometry": {
                 "type": "Point",
@@ -4157,7 +4260,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 4.1 - 17 km NNW of Ilfracombe, United Kingdom"
+                "title": "M 4.1 - 17 km NNW of Ilfracombe, United Kingdom",
+                "year": 2014
             },
             "geometry": {
                 "type": "Point",
@@ -4197,7 +4301,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.5 - 3 km WSW of Market Overton, United Kingdom"
+                "title": "M 3.5 - 3 km WSW of Market Overton, United Kingdom",
+                "year": 2014
             },
             "geometry": {
                 "type": "Point",
@@ -4237,7 +4342,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 2 km NNE of Hucknall, United Kingdom"
+                "title": "M 2.6 - 2 km NNE of Hucknall, United Kingdom",
+                "year": 2014
             },
             "geometry": {
                 "type": "Point",
@@ -4277,7 +4383,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.9 - 1 km ENE of Winchester, United Kingdom"
+                "title": "M 2.9 - 1 km ENE of Winchester, United Kingdom",
+                "year": 2015
             },
             "geometry": {
                 "type": "Point",
@@ -4317,7 +4424,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.8 - 2 km WSW of Market Overton, United Kingdom"
+                "title": "M 3.8 - 2 km WSW of Market Overton, United Kingdom",
+                "year": 2015
             },
             "geometry": {
                 "type": "Point",
@@ -4357,7 +4465,8 @@
                 "gap": null,
                 "magType": "mwr",
                 "type": "earthquake",
-                "title": "M 3.7 - 3 km SSE of Ramsgate, United Kingdom"
+                "title": "M 3.7 - 3 km SSE of Ramsgate, United Kingdom",
+                "year": 2015
             },
             "geometry": {
                 "type": "Point",
@@ -4397,7 +4506,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.0 - 6 km WSW of Caernarfon, United Kingdom"
+                "title": "M 3.0 - 6 km WSW of Caernarfon, United Kingdom",
+                "year": 2015
             },
             "geometry": {
                 "type": "Point",
@@ -4437,7 +4547,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.8 - 2 km W of Cottesmore, United Kingdom"
+                "title": "M 2.8 - 2 km W of Cottesmore, United Kingdom",
+                "year": 2015
             },
             "geometry": {
                 "type": "Point",
@@ -4477,7 +4588,8 @@
                 "gap": 137,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 3.8 - 31 km NE of Tobermory, United Kingdom"
+                "title": "M 3.8 - 31 km NE of Tobermory, United Kingdom",
+                "year": 2017
             },
             "geometry": {
                 "type": "Point",
@@ -4517,7 +4629,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 2 km NNW of Tarbert, United Kingdom"
+                "title": "M 2.6 - 2 km NNW of Tarbert, United Kingdom",
+                "year": 2017
             },
             "geometry": {
                 "type": "Point",
@@ -4557,7 +4670,8 @@
                 "gap": 92,
                 "magType": "mb",
                 "type": "earthquake",
-                "title": "M 4.3 - 5 km NE of Clydach, United Kingdom"
+                "title": "M 4.3 - 5 km NE of Clydach, United Kingdom",
+                "year": 2018
             },
             "geometry": {
                 "type": "Point",
@@ -4597,7 +4711,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.7 - 4 km E of Holmwood, United Kingdom"
+                "title": "M 2.7 - 4 km E of Holmwood, United Kingdom",
+                "year": 2018
             },
             "geometry": {
                 "type": "Point",
@@ -4637,7 +4752,8 @@
                 "gap": 76,
                 "magType": "mb",
                 "type": "earthquake",
-                "title": "M 4.1 - 7 km NNE of Withernsea, United Kingdom"
+                "title": "M 4.1 - 7 km NNE of Withernsea, United Kingdom",
+                "year": 2018
             },
             "geometry": {
                 "type": "Point",
@@ -4677,7 +4793,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.6 - 5 km W of Capel, United Kingdom"
+                "title": "M 2.6 - 5 km W of Capel, United Kingdom",
+                "year": 2018
             },
             "geometry": {
                 "type": "Point",
@@ -4717,7 +4834,8 @@
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.4 - 4 km E of Capel, United Kingdom"
+                "title": "M 2.4 - 4 km E of Capel, United Kingdom",
+                "year": 2018
             },
             "geometry": {
                 "type": "Point",
@@ -4757,7 +4875,8 @@
                 "gap": 190,
                 "magType": "mb_lg",
                 "type": "earthquake",
-                "title": "M 2.8 - 1 km S of Ewhurst, United Kingdom"
+                "title": "M 2.8 - 1 km S of Ewhurst, United Kingdom",
+                "year": 2018
             },
             "geometry": {
                 "type": "Point",
@@ -4797,7 +4916,8 @@
                 "gap": 211,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.5 - 1 km ENE of Gourock, United Kingdom"
+                "title": "M 2.5 - 1 km ENE of Gourock, United Kingdom",
+                "year": 2018
             },
             "geometry": {
                 "type": "Point",
