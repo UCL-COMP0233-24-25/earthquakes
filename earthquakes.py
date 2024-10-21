@@ -103,7 +103,7 @@ def avg_mag_per_year(data, plot=False):
     for year in cum_mag_per_year:
         cum_mag_per_year[year] = cum_mag_per_year[year]/year_counts[year]
     if plot:
-        plt.bar(year_counts.keys(), year_counts.values())
+        plt.bar(cum_mag_per_year.keys(), cum_mag_per_year.values())
         plt.xticks(np.arange(2000, 2019, 1))
         plt.xlabel("Year")
         plt.ylabel("Average Magnitude")
@@ -118,5 +118,5 @@ print(f"Loaded {count_earthquakes(data)}")
 max_magnitude, max_location = get_maximum(data)
 print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
 
-  
+freq_per_yr_plot(plot=True)
 avg_mag_per_year(data, plot=True)
