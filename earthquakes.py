@@ -46,7 +46,7 @@ def count_earthquakes(data):
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    return earthquake['properties']['mag']
 
 
 def get_location(earthquake):
