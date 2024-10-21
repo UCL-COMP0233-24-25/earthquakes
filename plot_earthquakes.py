@@ -58,34 +58,36 @@ def get_magnitudes_per_year(earthquakes):
     
     Returns a dictionary with years as keys, and lists of magnitudes as values.
     """
-    magnitudes_per_year = []
+    magnitudes_per_year = {}
 
     for earthquake in earthquakes: 
         year = get_year(earthquake)
         magnitude = get_magnitude(earthquake)
 
+        # Check if the year is already in the dictionary
         if year in magnitudes_per_year: 
             magnitudes_per_year[year].append(magnitude)
         else: 
+            # If not, initialize a new list for that year
             magnitudes_per_year[year] = [magnitude]
     
     return magnitudes_per_year
 
+
 def plot_average_magnitude_per_year(earthquakes):
     magnitudes_per_year = get_magnitudes_per_year(earthquakes)
     years = []
-    average_magnitude = []
+    average_magnitudes = []
 
     for year, magnitudes in magnitudes_per_year.items(): 
         years.append(year)
-        average_magnitude.append(sum(magnitudes) / len(magnitudes))
+        average_magnitudes.append(sum(magnitudes) / len(magnitudes))
     
-
     plt.figure(figsize=(10, 5))
-    plt.bar(years, earthquakes, color = 'orange')
+    plt.bar(years, average_magnitudes, color='orange')
     plt.xlabel('Year')
-    plt.ylabel('Average magnitudes')
-    plt.title('Average magnitudes per year')
+    plt.ylabel('Average Magnitude')
+    plt.title('Average Magnitude per Year')
     plt.grid(True)
     plt.show()
 
@@ -100,12 +102,13 @@ def plot_number_per_year(earthquakes):
         number_of_earthquakes.append(len(magnitudes))
 
     plt.figure(figsize=(10, 5))
-    plt.bar(years, earthquakes, color = 'orange')
+    plt.bar(years, number_of_earthquakes, color='orange')
     plt.xlabel('Year')
-    plt.ylabel('Number of earthquakes')
-    plt.title('Number of Earthquakes per year')
+    plt.ylabel('Number of Earthquakes')
+    plt.title('Number of Earthquakes per Year')
     plt.grid(True)
     plt.show()
+
         
 
 
