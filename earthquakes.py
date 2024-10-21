@@ -93,7 +93,7 @@ def plot_average_magnitude_per_year(data):
 
 def plot_number_per_year(data):
     magnitudes_per_year = get_magnitudes_per_year(data)
-    number_per_year = {year: len(mags) for year, mags in magnitudes_per_year.items()}
+    number_per_year = {year: len(mags) if sum(mags) > 0 else 0 for year, mags in magnitudes_per_year.items()}
 
     years = sorted(number_per_year.keys())
     number_of_earthquakes = [number_per_year[year] for year in years]
@@ -102,14 +102,13 @@ def plot_number_per_year(data):
     plt.bar(years, number_of_earthquakes)
     plt.title("Number of Earthquakes per Year")
     plt.xlabel("Year")
-    plt.xticks(range(min(years), max(years) + 1, 1))
+    plt.xticks(range(min(years), max(years) + 1))
     plt.ylabel("Number of Earthquakes")
-    plt.yticks(range(0, max(number_of_earthquakes) + 1, 1))
+    plt.yticks(range(0, max(number_of_earthquakes) + 1))
     plt.grid(True)
-    if not os.path.exists("plots"):
-        os.makedirs("plots")
-    plt.savefig(os.path.join("plots", "number_per_year.png"))
 
+    os.makedirs("plots", exist_ok=True)
+    plt.savefig("plots/number_per_year.png")
 
 data = get_data()
 print(f"Loaded {count_earthquakes(data)}")
