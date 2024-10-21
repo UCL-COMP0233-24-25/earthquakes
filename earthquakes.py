@@ -56,17 +56,17 @@ def get_year(earthquake):
 
 
 def get_magnitudes_per_year(data):
-    """Retrieve the magnitudes of all the earthquakes in a given year.
-
-    Returns a dictionary with years as keys, and lists of magnitudes as values.
-    """
+    """Retrieve the magnitudes of all earthquakes for each year."""
     magnitudes_per_year = {}
+
     for earthquake in data["features"]:
         year = get_year(earthquake)
-        magnitude = earthquake["properties"]["mag"]
-        if year not in magnitudes_per_year:
-            magnitudes_per_year[year] = []
-        magnitudes_per_year[year].append(magnitude)
+        magnitudes_per_year.setdefault(year, []).append(earthquake["properties"]["mag"])
+
+    if magnitudes_per_year:
+        for year in range(min(magnitudes_per_year), max(magnitudes_per_year) + 1):
+            magnitudes_per_year.setdefault(year, [0])
+
     return magnitudes_per_year
 
 
