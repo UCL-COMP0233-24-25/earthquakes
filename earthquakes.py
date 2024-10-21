@@ -3,7 +3,11 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
-
+from datetime import date
+import matplotlib.pyplot as plt
+import json
+import random
+import numpy as np
 
 def get_data():
     response = requests.get(
@@ -24,40 +28,6 @@ def get_data():
         print(f"Failed to retrieve data: {response.status_code}")
     return None
 
-def count_earthquakes(data):
-    """Get the total number of earthquakes in the dataset."""
-    return len(data["features"]) if "features" in data else 0
-
-
-def get_magnitude(earthquake):
-    """Retrives the magnitude of an earthquake."""
-    return earthquake["properties"].get("mag", None)
-
-
-def get_location(earthquake):
-    """Retrieve the latitude and longitude of an earthquake item."""
-    place = earthquake["properties"].get("place", "Unknown location")
-    coordinates = earthquake["geometry"].get("coordinates", [None, None, None])
-    longitude, latitude, depth = coordinates[0], coordinates[1], coordinates[2] if len(coordinates) == 3 else (None, None, None)
-    
-    return place, latitude, longitude, depth
-    
-
-
-def get_maximum(data):
-    """
-    Finds and returns the strongest earthquake in the dataset based on magnitude.
-    """
-    max_quake = None
-    max_magnitude = float('-inf')
-
-    for earthquake in data["features"]:
-        mag = get_magnitude(earthquake)
-        if mag is not None and mag > max_magnitude:
-            max_magnitude = mag
-            max_quake = earthquake
-    
-    return max_quake, max_magnitude
 
 def explore_structure(data, indent=0):
     """
@@ -100,12 +70,103 @@ def load_from_json(filename):
         data = json.load(file)
     return data
 
-import json
-import random
+def count_earthquakes(data):
+    """Get the total number of earthquakes in the dataset."""
+    return len(data["features"]) if "features" in data else 0
+
+
+def get_magnitude(earthquake):
+    """Retrives the magnitude of an earthquake."""
+    return earthquake["properties"].get("mag", None)
+
+
+def get_location(earthquake):
+    """Retrieve the latitude and longitude of an earthquake item."""
+    place = earthquake["properties"].get("place", "Unknown location")
+    coordinates = earthquake["geometry"].get("coordinates", [None, None, None])
+    longitude, latitude, depth = coordinates[0], coordinates[1], coordinates[2] if len(coordinates) == 3 else (None, None, None)
+    
+    return place, latitude, longitude, depth
+    
+
+
+def get_maximum(data):
+    """
+    Finds and returns the strongest earthquake in the dataset based on magnitude.
+    """
+    max_quake = None
+    max_magnitude = float('-inf')
+
+    for earthquake in data["features"]:
+        mag = get_magnitude(earthquake)
+        if mag is not None and mag > max_magnitude:
+            max_magnitude = mag
+            max_quake = earthquake
+    
+    return max_quake, max_magnitude
+
+def get_year(data):
+    """Extract the year in which an earthquake happened."""
+    for earthquake in data["features"]:
+        timestamp = earthquake["properties"]["time"]
+        # The time is given in a strange-looking but commonly-used format.
+        # To understand it, we can look at the documentation of the source data:
+        # https://earthquake.usgs.gov/data/comcat/index.php#time
+        # Fortunately, Python provides a way of interpreting this timestamp:
+        # (Question for discussion: Why do we divide by 1000?)
+        year = date.fromtimestamp(timestamp/1000).year
+        earthquake["properties"]["year"] = year
+    
+    return {feature["properties"].get("year") for feature in data["features"]}
+
+        
+
+def get_magnitudes_per_year(data):
+    """Retrieve the magnitudes of all the earthquakes in a given year.
+    
+    Returns a dictionary with years as keys, and lists of magnitudes as values.
+    """
+    new_data = {}
+    unique_years = {feature["properties"].get("year") for feature in data["features"]}
+    for year in unique_years:
+        earthquakes_year = [feature for feature in data["features"] if feature["properties"].get("year") == year]
+        frequency = len(earthquakes_year)
+        mean_magnitude = np.mean([get_magnitude(earthquake) for earthquake in earthquakes_year])
+        new_data[year] = {"frequency": frequency, "mean_magnitude": mean_magnitude}
+    
+    return new_data, unique_years
+
+  
+
+            
+
+
+
+
+
+def plot_average_magnitude_per_year(earthquakes):
+    ...
+
+
+def plot_number_per_year(earthquakes):
+    ...
+
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":        
     # Step 1: Retrieve the earthquake data
     earthquake_data = get_data()
-
+    #earthquake_data = earthquake_data["features"]
+    get_year(earthquake_data)
+    plot_data, years = get_magnitudes_per_year(earthquake_data)
+    
     if earthquake_data:
         # Step 2: Explore the structure of the data
         # print("Data structure:")
@@ -116,7 +177,7 @@ if __name__ == "__main__":
         total_earthquakes = count_earthquakes(earthquake_data)
         print("\nTotal number of earthquakes:", total_earthquakes)
         # Step 4: Save the data as a json file
-        ###save_to_json('earthquakes_data.json', earthquake_data)
+        ####save_to_json('earthquakes_data.json', earthquake_data)
 
         # Step 5: Find the strongest earthquake
         strongest_earthquake, max_magnitude = get_maximum(earthquake_data)
