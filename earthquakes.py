@@ -3,6 +3,8 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
+import json
+# import defaultdict
 
 
 def get_data():
@@ -23,39 +25,63 @@ def get_data():
 
     # The response we get back is an object with several fields.
     # The actual contents we care about are in its text field:
+    data = response.json()
     text = response.text
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
-    ...
-
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return ...
+    with open('earthquakes/my_file.json', 'w') as f:
+        json.dump(data, f)
+    
+    with open('earthquakes/my_file_text.json', 'w') as f2:
+        json.dump(text, f2)
+
+    print("finished writing the data to json")
+    return data
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
+    return len(data["features"])
 
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    return earthquake["properties"]["mag"]
 
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
     # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    return earthquake["geometry"]["coordinates"][0:2]
 
+
+# def get_maximum(data):
+#     """Get the magnitude and location of the strongest earthquake in the data."""
+#     locations = []
+#     magnitudes = []
+#     for earthquake in data["features"]:
+#         locations.append(get_location(earthquake))
+#         magnitudes.append(get_magnitude(earthquake))
+
+#     return max(magnitudes), locations[magnitudes.index(max(magnitudes))]
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
-
+    magnitude_dict = {}
+    for earthquake in data["features"]:
+        if get_magnitude(earthquake) in magnitude_dict:
+            magnitude_dict[get_magnitude(earthquake)].append(get_location(earthquake))
+        else:
+            magnitude_dict[get_magnitude(earthquake)]=[get_location(earthquake)]
+    
+    max_magnitude=max(magnitude_dict.keys())
+    return max_magnitude, magnitude_dict[max_magnitude]
 
 # With all the above functions defined, we can now call them and get the result
 data = get_data()
 print(f"Loaded {count_earthquakes(data)}")
 max_magnitude, max_location = get_maximum(data)
 print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
+# max could have occurred in 2 places, fix code to find this
