@@ -3,6 +3,7 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
+import json
 
 
 def get_data():
@@ -23,12 +24,11 @@ def get_data():
 
     # The response we get back is an object with several fields.
     # The actual contents we care about are in its text field:
-    text = response.text
+    text = response.json()
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
-    import json
-    json_str=json.dumps(text, indent=4, sort_keys=True)
+    json_str=json.dumps(text, indent=4)
     with open('jsonfile.json','w') as f:
         f.write(json_str)
 
@@ -38,9 +38,7 @@ def get_data():
         loaded_json_str=f.read()
     load=json.loads(loaded_json_str)
     # print(type(load))
-    dictload=json.loads(load)
-    # print(type(dictload))
-    features=dictload['features']
+    features=load['features']
     # print(features)
     return features
 
