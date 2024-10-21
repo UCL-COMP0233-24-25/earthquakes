@@ -88,12 +88,17 @@ def find_max_depth(data, current_depth=0):
     else:
         return current_depth
 
+# Function to save the group to a JSON file
+def save_to_json(filename, data):
+    with open(filename, 'w') as file:
+        json.dump(data, file, indent=4)
+    print(f"Data saved to {filename}")
 
-# # Function to load the JSON file
-# def load_json_file(filename):
-#     with open(filename, 'r') as file:
-#         data = json.load(file)
-#     return data
+# Function to load the group from a JSON file
+def load_from_json(filename):
+    with open(filename, 'r') as file:
+        data = json.load(file)
+    return data
 
 import json
 import random
@@ -103,9 +108,9 @@ if __name__ == "__main__":
 
     if earthquake_data:
         # Step 2: Explore the structure of the data
-        print("Data structure:")
-        explore_structure(earthquake_data)
-        print("\nMaximum depth of the JSON structure:", find_max_depth(earthquake_data))
+        # print("Data structure:")
+        # explore_structure(earthquake_data)
+        # print("\nMaximum depth of the JSON structure:", find_max_depth(earthquake_data))
 
         # Step 3: Count the number of earthquakes
         total_earthquakes = count_earthquakes(earthquake_data)
@@ -113,7 +118,7 @@ if __name__ == "__main__":
 
         # Step 4: Find the strongest earthquake
         strongest_earthquake, max_magnitude = get_maximum(earthquake_data)
-
+        save_to_json('earthquakes_data.json', earthquake_data)
         if strongest_earthquake:
             place, lat, lon, depth = get_location(strongest_earthquake)
             print(f"\nStrongest earthquake:")
@@ -123,14 +128,6 @@ if __name__ == "__main__":
         else:
             print("No earthquakes found.")
     
-
-
-
-
-    ###
-    # print(f"Loaded {count_earthquakes(data)}")
-    # max_magnitude, max_location = get_maximum(data)
-    # print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
 
 
 
