@@ -22,7 +22,7 @@ def get_data():
             "orderby": "time-asc"}
     )
 
-    # The response we get back is an object with several fields.
+    # The response we get back is an object`` with several fields.
     # The actual contents we care about are in its text field:
     text = response.text
     # To understand the structure of this text, you may want to save it
@@ -31,10 +31,12 @@ def get_data():
     with open('my_data.json', 'w') as f:
         json.dump(text, f)
 
-    data = json.loads(text)
-
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
+    data = json.loads(text)
+
+    #with open('my_data.json', 'r') as f:
+    #    data = json.loads(json.load(f))
 
     return data
 
