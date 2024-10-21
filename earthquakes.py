@@ -1,9 +1,8 @@
-# The Python standard library includes some functionality for communicating
-# over the Internet.
-# However, we will use a more powerful and simpler library called requests.
-# This is external library that you may need to install first.
+from datetime import date
 import requests
+import matplotlib.pyplot as plt
 import json
+import numpy as np
 
 def get_data():
     # With requests, we can ask the web service for the data.
@@ -35,9 +34,17 @@ def get_data():
     # What format is the text in? How can we load the values?
     return json.loads(text)
 
-def count_earthquakes(data):
-    """Get the total number of earthquakes in the response."""
-    return data["metadata"]["count"]
+
+def get_year(earthquake):
+    """Extract the year in which an earthquake happened."""
+    timestamp = earthquake['properties']['time']
+    # The time is given in a strange-looking but commonly-used format.
+    # To understand it, we can look at the documentation of the source data:
+    # https://earthquake.usgs.gov/data/comcat/index.php#time
+    # Fortunately, Python provides a way of interpreting this timestamp:
+    # (Question for discussion: Why do we divide by 1000?)
+    year = date.fromtimestamp(timestamp/1000).year
+    return year
 
 
 def get_magnitude(earthquake):
@@ -45,21 +52,54 @@ def get_magnitude(earthquake):
     return earthquake["properties"]["mag"]
 
 
-def get_location(earthquake):
-    """Retrieve the latitude and longitude of an earthquake item."""
-    # There are three coordinates, but we don't care about the third (altitude)
-    return earthquake["geometry"]["coordinates"][0:2]
+# This is function you may want to create to break down the computations,
+# although it is not necessary. You may also change it to something different.
+def get_magnitudes_per_year(earthquakes):
+    """Retrieve the magnitudes of all the earthquakes in a given year.
+    
+    Returns a dictionary with years as keys, and lists of magnitudes as values.
+    """
+    years = set(get_year(i) for i in earthquakes)
+    mag_year_dic = {}
+    for year in years:
+        # list_test = [earthquake  for earthquake in earthquakes if  get_year(earthquake) == year ]
+
+        temp = {year : [get_magnitude(earthquake) for earthquake in earthquakes if  get_year(earthquake) == year ]}
+
+        mag_year_dic.update(temp)
+    return(mag_year_dic)
+         
+    
+
+def plot_average_magnitude_per_year(earthquakes):
+    dic = get_magnitudes_per_year(earthquakes)
+    dic = dict(sorted(dic.items()))
+    mean_mags = [np.mean(dic[year]) for year in dic.keys()]
+    print(mean_mags)
+    plt.plot(dic.keys(), mean_mags)
+    plt.xlabel("Year")
+    plt.ylabel("Magnitude")
+    plt.show()
+    
 
 
-def get_maximum(data):
-    """Get the magnitude and location of the strongest earthquake in the data."""
-    earthquakes = data["features"]
-    max_earthquake = max(earthquakes, key=get_magnitude)
-    return get_magnitude(max_earthquake), get_location(max_earthquake)
-        
+def plot_number_per_year(earthquakes):
+    dic = get_magnitudes_per_year(earthquakes)
+    dic = dict(sorted(dic.items()))
+    years = dic.keys()
+    counts = [len(dic[year]) for year in dic.keys()]
+    plt.bar(years, counts)
+    plt.xlabel("Year")
+    plt.ylabel("Freq")
+    plt.title("Number of Earthquakes per Year")
+    plt.show()
 
-# With all the above functions defined, we can now call them and get the result
-data = get_data()
-print(f"Loaded {count_earthquakes(data)}")
-max_magnitude, max_location = get_maximum(data)
-print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
+
+# Get the data we will work with
+quakes = get_data()['features']
+
+#Plot the results - this is not perfect since the x axis is shown as real
+#numbers rather than integers, which is what we would prefer!
+plot_number_per_year(quakes)
+plt.clf()  # This clears the figure, so that we don't overlay the two plots
+plot_average_magnitude_per_year(quakes)
