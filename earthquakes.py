@@ -4,6 +4,10 @@
 # This is external library that you may need to install first.
 import requests
 import json
+import matplotlib.pyplot as plt
+import datetime
+import numpy as np
+
 
 
 def get_data():
@@ -65,8 +69,31 @@ def get_maximum(data):
             max_locations.append(get_location(earthquake))
     return max_magnitude, max_locations
 
+def freq_per_yr_plot():
+
+    years_sec = [earthquake['properties']['time'] for earthquake in data['features']] 
+    years = [datetime.datetime.fromtimestamp(year/1000).year for year in years_sec]
+    print(years)
+
+    year_counts = {}
+    for year in years:
+        if year in year_counts:
+            year_counts[year] += 1
+        else:
+            year_counts[year] = 1
+
+    plt.bar(year_counts.keys(), year_counts.values())
+    plt.xticks(np.arange(2000, 2019, 1))
+    plt.xlabel("Year")
+    plt.ylabel("Number of Earthquakes")
+    plt.title("Number of Earthquakes per Year")
+    plt.show()
+
 # With all the above functions defined, we can now call them and get the result
 data = get_data()
 print(f"Loaded {count_earthquakes(data)}")
 max_magnitude, max_location = get_maximum(data)
 print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
+
+    
+freq_per_yr_plot()   
