@@ -27,11 +27,6 @@ def get_data():
     return jsonText
 
 
-def get_data():
-    """Retrieve the data we will be working with."""
-    ...
-
-
 def get_year(earthquake):
     """Extract the year in which an earthquake happened."""
     timestamp = earthquake["properties"]["time"]
@@ -45,24 +40,43 @@ def get_year(earthquake):
 
 
 def get_magnitude(earthquake):
-    """Retrive the magnitude of an earthquake item."""
-    ...
+    return earthquake["properties"]["mag"]
 
 
 # This is function you may want to create to break down the computations,
 # although it is not necessary. You may also change it to something different.
 def get_magnitudes_per_year(earthquakes):
     """Retrieve the magnitudes of all the earthquakes in a given year.
-
     Returns a dictionary with years as keys, and lists of magnitudes as values.
     """
-    ...
+    output = {}
+    for earthquake in earthquakes:
+        Year = get_year(earthquake)
+        Mag = get_magnitude(earthquake)
+        output.setdefault(Year, []).append(Mag)
+    return output
 
 
-def plot_average_magnitude_per_year(earthquakes): ...
+def plot_average_magnitude_per_year(earthquakes):
+    output = get_magnitudes_per_year(earthquakes)
+    Avg = {
+        year: sum(magnitudes) / len(magnitudes) for year, magnitudes in output.items()
+    }
+
+    date = list(Avg.keys())
+    value = list(Avg.values())
+    plt.plot(date, value)
+    plt.show
 
 
-def plot_number_per_year(earthquakes): ...
+def plot_number_per_year(earthquakes):
+    output = get_magnitudes_per_year(earthquakes)
+    Avg = {year: sum(magnitudes) for year, magnitudes in output.items()}
+
+    date = list(Avg.keys())
+    value = list(Avg.values())
+    plt.plot(date, value)
+    plt.show
 
 
 # Get the data we will work with
