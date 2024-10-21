@@ -134,22 +134,41 @@ def get_magnitudes_per_year(data):
         mean_magnitude = np.mean([get_magnitude(earthquake) for earthquake in earthquakes_year])
         new_data[year] = {"frequency": frequency, "mean_magnitude": mean_magnitude}
     
-    return new_data, unique_years
+    return new_data, unique_years         
 
-  
+def plot_average_magnitude_per_year(data):
+    mean_mags = [entry['mean_magnitude'] for entry in data.values()]
 
-            
+    # Create the plot
+    plt.figure(figsize=(10, 6))
+    plt.plot(list(data.keys()), mean_mags, marker='o', color='b')
+
+    # Add labels and title
+    plt.xlabel('Year')
+    plt.ylabel('Mean Magnitude of Earthquakes ')
+    plt.title('Earthquake Magnitude by Year')
+
+    # Display the plot
+    plt.grid(True)
+    plt.show()
 
 
+def plot_number_per_year(data):
+    frequencies = [entry['frequency'] for entry in data.values()]
+    
 
+    # Create the plot
+    plt.figure(figsize=(10, 6))
+    plt.plot(list(data.keys()), frequencies, marker='o', color='b')
 
+    # Add labels and title
+    plt.xlabel('Year')
+    plt.ylabel('Number of Earthquakes (Frequency)')
+    plt.title('Earthquake Frequency by Year')
 
-def plot_average_magnitude_per_year(earthquakes):
-    ...
-
-
-def plot_number_per_year(earthquakes):
-    ...
+    # Display the plot
+    plt.grid(True)
+    plt.show()
 
 
 
@@ -166,6 +185,12 @@ if __name__ == "__main__":
     #earthquake_data = earthquake_data["features"]
     get_year(earthquake_data)
     plot_data, years = get_magnitudes_per_year(earthquake_data)
+    print(years)
+    print([entry['frequency'] for entry in plot_data.values()])
+    plot_number_per_year(plot_data)
+    # plt.clf()
+    plot_average_magnitude_per_year(plot_data)
+
     
     if earthquake_data:
         # Step 2: Explore the structure of the data
