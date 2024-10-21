@@ -3,6 +3,7 @@
 # However, we will use a more powerful and simpler library called requests.
 # This is external library that you may need to install first.
 import requests
+import json
 
 
 def get_data():
@@ -27,31 +28,50 @@ def get_data():
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
-    ...
+    with open("data.json", "w") as f:
+        f.write(text)
+    
+    with open("data.json", "r") as f:
+        data = json.load(f)
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return ...
+    return data
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
+    earthquakes = data['features']
+    return len(earthquakes)
 
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    return earthquake['properties']['mag']
 
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
     # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    longitude, latitude = earthquake['geometry']['coordinates'][:2] 
+    return latitude, longitude
 
 
 def get_maximum(data):
-    """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
+    """Get the magnitude and location of the strongest earthquake in the data.
+    Return all earthquakes with the maximum magnitude if there are multiple"""
+    
+    max_magnitude = 0
+    max_location = []
+    for earthquake in data['features']:
+        magnitude = get_magnitude(earthquake)
+        if magnitude == max_magnitude:
+            location = get_location(earthquake)
+            max_location.append(location)
+        elif magnitude > max_magnitude:
+            location = get_location(earthquake)
+            max_magnitude = magnitude
+            max_location = [location]
+    return max_magnitude, max_location
 
 
 # With all the above functions defined, we can now call them and get the result
