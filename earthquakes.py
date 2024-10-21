@@ -59,3 +59,23 @@ data = get_data()
 print(f"Loaded {count_earthquakes(data)}")
 max_magnitude, max_location = get_maximum(data)
 print(f"The strongest earthquake was at {max_location} with magnitude {max_magnitude}")
+
+
+#Plot average number of earthquakes per year
+import numpy as np
+import matplotlib.pyplot as plt
+yearlist=np.arange(2000,2019,1)
+datalist = [len([z for z in get_data()['features'] if any([get_year(z) == x])]) for x in yearlist]
+plt.plot(yearlist,datalist)
+
+#Plot average magnitude of earthquakes per year
+yearlist=np.arange(2000,2019,1)
+noofquakeslist = [len([z for z in get_data()['features'] if any([get_year(z) == x])]) for x in yearlist]
+maglist=[sum([get_magnitude(z) for z in get_data()['features'] if any([get_year(z) == x])]) for x in yearlist]
+
+for x in noofquakeslist:
+    try: 
+        a=x/y
+    except ZeroDivisionError:
+        a=0
+    for y in maglist:
