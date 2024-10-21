@@ -23,7 +23,7 @@ def get_data():
 
     # The response we get back is an object with several fields.
     # The actual contents we care about are in its text field:
-    text = response.text
+    # text = response.text
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
@@ -31,28 +31,39 @@ def get_data():
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    return ...
+    data = response.json()
+    return data
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return ...
+    return len(data['features'])
 
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    return ...
+    return earthquake['properties']['mag']
 
 
 def get_location(earthquake):
     """Retrieve the latitude and longitude of an earthquake item."""
     # There are three coordinates, but we don't care about the third (altitude)
-    return ...
+    coordinates = earthquake['geometry']['coordinates']
+    #Return only latitude and lonogitude
+    return coordinates[1], coordinates[0]
 
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
+    max_magnitude = None
+    max_location = None
 
+    for earthquake in data['features']:
+        magnitude = get_magnitude(earthquake)
+        if max_magnitude is None or magnitude > max_magnitude: 
+            max_magnitude = magnitude
+            max_location = get_location(earthquake)
+
+    return max_magnitude, max_location
 
 # With all the above functions defined, we can now call them and get the result
 data = get_data()
