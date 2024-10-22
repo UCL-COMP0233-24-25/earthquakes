@@ -49,6 +49,7 @@ def plot_average_magnitude_per_year(earthquakes):
     dates = list(avg_mag_per_year.keys())
     values = list(avg_mag_per_year.values())
     
+    plt.figure(figsize=(12, 8))
     plt.plot(dates, values, '-o')
     
     plt.xlabel('Years')
@@ -67,6 +68,7 @@ def plot_number_per_year(earthquakes):
     dates = list(number_dict.keys())
     values = list(number_dict.values())
 
+    plt.figure(figsize=(12, 8))
     plt.plot(dates, values, '-o')
     
     plt.xlabel('Years')
