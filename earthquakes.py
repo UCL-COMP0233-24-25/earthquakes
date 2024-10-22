@@ -28,12 +28,15 @@ def get_data():
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
     #...
-    with open('earthquakes.json', 'w') as f:
-        json.dump(text, f)
         
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
     data=json.loads(text)
+    
+    json_string = json.dumps(data, indent=4, sort_keys=True)
+    with open('earthquakes.json', 'w') as f:
+        f.write(json_string)
+        
     return data
 
 def count_earthquakes(data):
