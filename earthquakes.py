@@ -28,7 +28,6 @@ def get_data():
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
-    ...
 
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
@@ -39,7 +38,7 @@ def get_data():
 
 def count_earthquakes(data):
     """Get the total number of earthquakes in the response."""
-    return len(data['features'])
+    return data["metadata"]["count"]
 
 
 def get_magnitude(earthquake):
@@ -55,7 +54,7 @@ def get_location(earthquake):
 
 def get_maximum(data):
     """Get the magnitude and location of the strongest earthquake in the data."""
-    ...
+
     max_magnitude = max(get_magnitude(earthquake) for earthquake in data["features"])
     location = [get_location(earthquake) for earthquake in data["features"] if get_magnitude(earthquake) == max_magnitude]
         
