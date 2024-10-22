@@ -24,6 +24,7 @@ def get_data():
     # The response we get back is an object with several fields.
     # The actual contents we care about are in its text field:
     text = response.text
+    # print(type(text)) # str
     # To understand the structure of this text, you may want to save it
     # to a file and open it in VS Code or a browser.
     # See the README file for more information.
@@ -31,12 +32,12 @@ def get_data():
         
     # We need to interpret the text to get values that we can work with.
     # What format is the text in? How can we load the values?
-    data=json.loads(text)
+    data=json.loads(text) # json.loads function to decode this JSON formatted string in to a Python object
     
-    json_string = json.dumps(data, indent=4, sort_keys=True)
+    # json_string = json.dumps(data, indent=4, sort_keys=True) # encode this Python object to a JSON formatted string
     with open('earthquakes.json', 'w') as f:
-        f.write(json_string)
-        
+        # f.write(json_string) # write() argument must be str, not dict
+        json.dump(data, f, indent=4, sort_keys=True) # directly write the JSON encoding of a Python object to a file
     return data
 
 def count_earthquakes(data):

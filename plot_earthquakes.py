@@ -1,38 +1,13 @@
 from datetime import date
 
 import matplotlib.pyplot as plt
-import requests
 import json
+
 def get_data():
     """Retrieve the data we will be working with."""
     with open('earthquakes.json', 'r') as f:
-        data = json.load(f)
-    data = json.dumps(data)
+        data = json.load(f) # json.load function which can be used to directly load a JSON formatted file in to a Python object
     return data
-    # response = requests.get(
-    #     "http://earthquake.usgs.gov/fdsnws/event/1/query.geojson",
-    #     params={
-    #         'starttime': "2000-01-01",
-    #         "maxlatitude": "58.723",
-    #         "minlatitude": "50.008",
-    #         "maxlongitude": "1.67",
-    #         "minlongitude": "-9.756",
-    #         "minmagnitude": "1",
-    #         "endtime": "2018-10-11",
-    #         "orderby": "time-asc"}
-    # )
-    # data = response.json()
-
-    # # To understand the structure of this text, you may want to save it
-    # # to a file and open it in VS Code or a browser.
-    # # See the README file for more information.
-    # # We need to interpret the text to get values that we can work with.
-    # # # What format is the text in? How can we load the values?
-    # # with open('earthquakes/quakes_data.json', 'w') as f:
-    # #     json.dump(data, f)
-    # print("got the data")
-    # return data
-
 
 def get_year(earthquake):
     """Extract the year in which an earthquake happened."""
@@ -48,7 +23,7 @@ def get_year(earthquake):
 
 def get_magnitude(earthquake):
     """Retrive the magnitude of an earthquake item."""
-    ...
+    return earthquake['properties']['mag']
 
 
 # This is function you may want to create to break down the computations,
@@ -58,23 +33,57 @@ def get_magnitudes_per_year(earthquakes):
     
     Returns a dictionary with years as keys, and lists of magnitudes as values.
     """
-    ...
-
+    year_dic = {}
+    for earthquake in earthquakes:
+        current_year = get_year(earthquake)
+        current_mag = get_magnitude(earthquake)
+        if current_year in year_dic:
+            year_dic[current_year].append(current_mag)
+        else:
+            year_dic[current_year]=[current_mag]
+    return year_dic
 
 def plot_average_magnitude_per_year(earthquakes):
-    ...
+    year_dic = get_magnitudes_per_year(earthquakes)
+    avg_mag_per_year = {key: sum(value)/len(value) for key,value in year_dic.items()}
+    dates = list(avg_mag_per_year.keys())
+    values = list(avg_mag_per_year.values())
+    
+    plt.plot(dates, values, '-o')
+    
+    plt.xlabel('Years')
+    plt.xticks(dates, rotation=45) 
+    plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{int(x)}'))
+    plt.ylabel('Frequency of earthquakes')
+    
+    plt.title('Frequency (number) of earthquakes per year')
+    plt.savefig('./Frequency (number) of earthquakes per year.jpg')
+    # plt.show()
 
 
 def plot_number_per_year(earthquakes):
-    ...
+    earthquakes_dict = get_magnitudes_per_year(earthquakes)
+    number_dict = {key: (sum(value)) for key, value in earthquakes_dict.items()}
+    dates = list(number_dict.keys())
+    values = list(number_dict.values())
+
+    plt.plot(dates, values, '-o')
+    
+    plt.xlabel('Years')
+    plt.xticks(dates, rotation=45) 
+    plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{int(x)}'))
+    plt.ylabel('Average magnitude')
+    
+    plt.title('Average magnitude of earthquakes per year')
+    plt.savefig('./Average magnitude of earthquakes per year.jpg')
+    # plt.show()
 
 
 
 # Get the data we will work with
 quakes = get_data()['features']
-print(quakes)
-# # Plot the results - this is not perfect since the x axis is shown as real
-# # numbers rather than integers, which is what we would prefer!
-# plot_number_per_year(quakes)
-# plt.clf()  # This clears the figure, so that we don't overlay the two plots
-# plot_average_magnitude_per_year(quakes)
+# Plot the results - this is not perfect since the x axis is shown as real
+# numbers rather than integers, which is what we would prefer!
+plot_number_per_year(quakes)
+plt.clf()  # This clears the figure, so that we don't overlay the two plots
+plot_average_magnitude_per_year(quakes)
