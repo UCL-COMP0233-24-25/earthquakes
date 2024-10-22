@@ -78,11 +78,18 @@ def plot_average_magnitude_per_year(earthquakes):
     dates = list(average_magnitude_map.keys())
     magnitudes = list(average_magnitude_map.values())
     
-    plt.plot(dates, magnitudes, 'o-')
-    print(dates)
-    # plt.xticks(dates)
+    plt.figure(figsize=(8,5))
+    plt.rcParams.update({'font.size': 8})
+    fig = plt.gcf()
+    ax = fig.add_subplot(111)
+
+    ax.plot(dates,magnitudes,label="Slow method", color='red',ls='-',marker='X')
+
+    ax.set_title('Average annual earthquake magnitude')
+    ax.set_xticks(dates)
+    ax.set_ylabel('Magnitude (richter scale)')
+    ax.set_xlabel('Year')
     plt.show()
-    
 
 
 def plot_number_per_year(earthquakes):
@@ -90,14 +97,20 @@ def plot_number_per_year(earthquakes):
     average_magnitude_map = {year: len(earthquake_mag) for year, earthquake_mag in magnitude_dict.items()}
     
     dates = list(average_magnitude_map.keys())
-    magnitudes = list(average_magnitude_map.values())
+    numbers = list(average_magnitude_map.values())
     
-    plt.plot(dates, magnitudes, 'o-')
-    print(dates)
-    # plt.xticks(dates)
-    plt.show()
-    
+    plt.figure(figsize=(8,5))
+    plt.rcParams.update({'font.size': 8})
+    fig = plt.gcf()
+    ax = fig.add_subplot(111)
 
+    ax.bar(dates,numbers,label="Slow method", color='red')
+
+    ax.set_title('Annual Earthquake Frequency')
+    ax.set_xticks(dates)
+    ax.set_ylabel('Earthquake Frequency (Events per year)')
+    ax.set_xlabel('Year')
+    plt.show()
 
 
 # Get the data we will work with
