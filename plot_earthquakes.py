@@ -54,30 +54,39 @@ def get_magnitude(earthquake):
 
 # This is function you may want to create to break down the computations,
 # although it is not necessary. You may also change it to something different.
-def get_magnitudes_per_year(earthquakes,year="2000"):
+def get_magnitudes_per_year(earthquakes):
     """Retrieve the magnitudes of all the earthquakes in a given year."""
-    mag_per_year = [] # makes an empty list to store magnitudes that match the year 
-    for earthquake in earthquakes:
-        if get_year(earthquake) == year : # checks if the earthquake happened in year
-            mag = get_magnitude(earthquake) # gets the magnitude of the earthquake
-            mag_per_year.append(mag) #adds the magnitude to the list
-    return mag_per_year,year
-    
     """"Returns a dictionary with years as keys, and lists of magnitudes as values."""
-        
-
-
+    mag_per_year = {}
+    for earthquake in earthquakes:
+        year = get_year(earthquake)
+        if year not in mag_per_year:
+            mag_per_year.update({year:[]})
+        else:
+            mag = get_magnitude(earthquake)
+            mag_per_year.setdefault(year, []).append(mag)
+    return mag_per_year
 
 def plot_average_magnitude_per_year(earthquakes):
-    mag_per_year,year = get_magnitudes_per_year(earthquakes)
-    plt.plot(mag_per_year)
-    ...
-
+    pass
 
 def plot_number_per_year(earthquakes):
-    ...
+    plt.figure(figsize=(10,5)) #sets size of the plot
+    data = get_magnitudes_per_year(earthquakes) #fetches data of get_magnitude_per_year
+    years = [int(year) for year in data.keys()] #parse in data for x axis
+    num_earthquakes = [len(i) for i in data.values()] #parse in data for y axis
+    
+    plt.bar(years, num_earthquakes) #plots in bar graph
+    plt.xticks([i for i in range(years[0],years[-1]+1)]) #sets the ticks so all year are covered even if there isn't any earthquakes in that year.
+    
+    # Add title and labels
+    plt.title("Number of earthquakes per year")
+    plt.xlabel("year")
+    plt.ylabel("number of earthquakes")
 
-
+    #generates the graph
+    #plt.show()
+    plt.savefig("Earthquakes by year.png")
 
 # Get the data we will work with
 quakes = get_data()['features']
@@ -86,6 +95,4 @@ quakes = get_data()['features']
 # numbers rather than integers, which is what we would prefer!
 plot_number_per_year(quakes)
 plt.clf()  # This clears the figure, so that we don't overlay the two plots
-plot_average_magnitude_per_year(quakes)
-
-get_magnitudes_per_year()
+#plot_average_magnitude_per_year(quakes)
