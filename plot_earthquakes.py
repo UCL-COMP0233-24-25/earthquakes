@@ -2,6 +2,7 @@ from datetime import date
 import matplotlib.pyplot as plt
 import json
 import requests
+import numpy as np
 
 def get_data():
     """Retrieve the data we will be working with."""
@@ -68,7 +69,27 @@ def get_magnitudes_per_year(earthquakes):
     return mag_per_year
 
 def plot_average_magnitude_per_year(earthquakes):
-    pass
+    plt.figure(figsize=(10,5))
+    data = get_magnitudes_per_year(earthquakes)
+    years = [int(year) for year in data.keys()]
+    mean_mag_per_year = []
+
+    for i in data.values():
+        if len(i) == 0:
+            mean_mag_per_year.append(0)
+        else:
+            mean_mag_per_year.append(np.mean(i))
+
+    plt.bar(years,mean_mag_per_year)
+    plt.xticks([i for i in range(years[0],years[-1]+1)])
+
+    plt.title("Average magnitude of earthquakes per year")
+    plt.xlabel("year")
+    plt.ylabel("average magnitude")
+
+    plt.savefig("Average magnitude of earthquakes by year.png")
+
+
 
 def plot_number_per_year(earthquakes):
     plt.figure(figsize=(10,5)) #sets size of the plot
@@ -95,4 +116,4 @@ quakes = get_data()['features']
 # numbers rather than integers, which is what we would prefer!
 plot_number_per_year(quakes)
 plt.clf()  # This clears the figure, so that we don't overlay the two plots
-#plot_average_magnitude_per_year(quakes)
+plot_average_magnitude_per_year(quakes)
